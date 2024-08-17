@@ -3,8 +3,8 @@ import jwt from "jsonwebtoken";
 import con from "../../database.js";
 
 const userLogin = (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
+  const { username, password } = req.body;
+
   if (!username || !password) {
     return res.status(400).json({ error: "Faltan campos obligatorios" });
   }
@@ -26,12 +26,23 @@ const userLogin = (req, res) => {
       return res.status(401).json({ error: "Contraseña incorrecta" });
     }
 
-    const token = jwt.sign({ id: user.id }, "secreto", {
-      expiresIn: 86400,
+    const token = jwt.sign({ username: user.name }, "secreto", {
+      expiresIn: 86400, // 24 horas
     });
-    console.log("Usuario logueado:", user.name);
-    console.log("Token:", token);
-    res.json({ token });
+
+    // Elimina el campo de contraseña y asegúrate de devolver solo los datos necesarios del usuario
+    delete user.password;
+
+    // Crear un objeto limpio para la respuesta del usuario
+    const userData = {
+      name: user.name,
+    };
+
+    res.json({
+      success: true,
+      token,
+      user: userData,
+    });
   });
 };
 
