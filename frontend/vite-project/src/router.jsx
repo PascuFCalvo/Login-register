@@ -5,6 +5,7 @@ import Register from "./pages/register/register";
 import Start from "./pages/start/start";
 import MainPage from "./pages/mainpage/mainpage";
 import UpdateProfile from "./pages/complete-profile/completeProfile";
+import ChangePassword from "./pages/changePassword/changePassword";
 
 export default function RouterApp() {
   return (
@@ -16,6 +17,7 @@ export default function RouterApp() {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/mainpage" element={<MainPage />}></Route>
         <Route path="/update" element={<UpdateProfile />}></Route>
+        <Route path="/changePassword" element={<ChangePassword />}></Route>
       </Routes>
     </BrowserRouter>
   );

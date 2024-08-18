@@ -4,5 +4,6 @@
   height: 100vh;
   left: 0;
   top: 0;
-  background-color: #f8f9fa;
+  background-color: #242424;
+  border-right: solid 1px #dfdfdf;
 }

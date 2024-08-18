@@ -16,7 +16,9 @@ const AsideRight = () => {
     dispatch(setUser(null));
     dispatch(setToken(null));
     //redirigir a la página
-    navigate("/login");
+    setTimeout(() => {
+      navigate("/");
+    }, 100);
   };
   return (
     <aside className="asideRight">

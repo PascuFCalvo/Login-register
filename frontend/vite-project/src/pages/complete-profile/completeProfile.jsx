@@ -116,6 +116,9 @@ function UpdateProfile() {
           value={profilePicture}
           onChange={(event) => setProfilePicture(event.target.value)}
         />
+        <button onClick={() => navigate("/changePassword")}>
+          Change Password
+        </button>
         <button type="submit">Complete Profile</button>
         <button onClick={() => navigate("/mainPage")}>volver</button>
       </form>
