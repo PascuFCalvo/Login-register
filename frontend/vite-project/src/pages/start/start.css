@@ -1,0 +1,47 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Contenedor del botón */
+button {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto hover para el botón */
+button:hover {
+  background: linear-gradient(
+    90deg,
+    #bc1888 0%,
+    #cc2366 25%,
+    #dc2743 50%,
+    #e6683c 75%,
+    #f09433 100%
+  );
+  transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
+
+/* Efecto de clic */
+button:active {
+  transform: scale(0.95); /* Reducir ligeramente el tamaño */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reducir la sombra */
+}

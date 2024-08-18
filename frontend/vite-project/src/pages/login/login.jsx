@@ -6,31 +6,35 @@ import {
   setUser,
   setToken,
 } from "../../app/features/auth/authSlice";
+import "./login.css";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // Hook para navegar sin recargar la página
+  const navigate = useNavigate();
 
   const validateName = (name) => {
     if (name.length < 3) {
-      console.log("Name must be at least 3 characters long");
+      setErrorMessage("Name must be at least 3 characters long");
       return false;
     }
-    return name.toUpperCase();
+    return true;
   };
 
   const validatePassword = (password) => {
     if (password.length < 3) {
-      console.log("Password must be at least 8 characters long");
+      setErrorMessage("Password must be at least 3 characters long");
       return false;
     }
     return true;
   };
 
   const sendData = async (event) => {
-    event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+    event.preventDefault();
+
+    setErrorMessage("");
 
     if (!validateName(username) || !validatePassword(password)) {
       return;
@@ -53,18 +57,17 @@ function Login() {
 
       if (data.success) {
         dispatch(setLogged(true));
-        dispatch(setUser(data.user.name)); // Ahora envías el objeto completo de usuario
-        dispatch(setToken(data.token)); // Guardas el token en el estado global
+        dispatch(setUser(data.user.name));
+        dispatch(setToken(data.token));
 
         console.log("Login successful:", data.user.name);
-        setTimeout(() => {
-          navigate("/mainpage"); // Redirige a la página principal
-        }, 1000);
+        navigate("/mainpage");
       } else {
-        console.log("Login failed:", data.message);
+        setErrorMessage("Login failed: " + data.message);
       }
     } catch (error) {
       console.error("Error:", error);
+      setErrorMessage("An error occurred. Please try again.");
     }
   };
 
@@ -88,7 +91,9 @@ function Login() {
           />
         </label>
         <button type="submit">Login</button>
+        <button onClick={() => navigate("/")}>Volver</button>
       </form>
+      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}{" "}
     </>
   );
 }

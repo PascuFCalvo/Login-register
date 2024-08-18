@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./start.css";
 
 function Start() {
   const navigate = useNavigate(); // Hook para manejar la navegación

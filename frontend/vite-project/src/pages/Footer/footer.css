@@ -1,0 +1,21 @@
+/* Estilos generales para el footer */
+footer {
+  background-color: #333; /* Fondo oscuro */
+  color: white; /* Texto claro */
+  text-align: center; /* Centrar el texto */
+  padding: 20px 0; /* Espaciado interno */
+  bottom: 0;
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil en la parte superior */
+}
+
+/* Estilo del texto dentro del footer */
+footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Asegurar que el contenido principal tenga suficiente espacio */
+.body-content {
+  padding-bottom: 60px; /* Asegurar que el contenido no se superponga con el footer */
+}

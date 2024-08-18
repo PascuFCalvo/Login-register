@@ -1,0 +1,42 @@
+/* Estilos generales para el aside derecho */
+.asideRight {
+  min-width: 200px;
+  width: 10vw;
+  height: 100vh;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea el contenido inicial en la parte superior */
+  align-items: center;
+  right: 0;
+  top: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Contenedor de los botones */
+.buttonsProfile {
+  margin-top: auto; /* Empuja los botones hacia la parte inferior */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Opcional, para centrar horizontalmente los botones */
+}
+
+/* Botones dentro del aside */
+.buttonsProfile button {
+  margin-bottom: 10px; /* Espacio entre botones */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.buttonsProfile button:hover {
+  background-color: #0056b3;
+}

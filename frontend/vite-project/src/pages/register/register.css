@@ -1,0 +1,96 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Contenedor del formulario de registro */
+form {
+  width: 100%;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Estilos para el título */
+form h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Estilos para los campos de entrada */
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Efecto hover en los campos de entrada */
+form input:focus {
+  outline: none;
+  border-color: #cc2366; /* Morado estilo Instagram */
+}
+
+/* Estilos para los botones */
+form button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-bottom: 10px;
+}
+
+/* Efecto hover para los botones */
+form button:hover {
+  background: linear-gradient(
+    90deg,
+    #bc1888 0%,
+    #cc2366 25%,
+    #dc2743 50%,
+    #e6683c 75%,
+    #f09433 100%
+  );
+  transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
+
+/* Efecto de clic */
+form button:active {
+  transform: scale(0.95); /* Reducir ligeramente el tamaño */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reducir la sombra */
+}
+
+/* Estilos para el botón de cancelar */
+form button[type="button"] {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* Estilos para el mensaje de error */
+form p {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
