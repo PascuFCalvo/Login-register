@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LoginRegister from "./pages/login-register/loginRegister";
+import LoginRegister from "./pages/loginRegister/loginRegister";
 import Login from "./pages/login/login";
 import Register from "./pages/register/register";
 import Start from "./pages/start/start";
 import MainPage from "./pages/mainpage/mainpage";
-import UpdateProfile from "./pages/complete-profile/completeProfile";
+import UpdateProfile from "./pages/completeProfile/completeProfile";
 import ChangePassword from "./pages/changePassword/changePassword";
 
 export default function RouterApp() {
